@@ -61,7 +61,7 @@ def generate():
    print("received dimensions: ", x, y)   
    if type==1:    
       letters="[CircWithLines]"+letters
-      test.circWithLines(44,7,letters)                  
+      test.circWithLines(x,y,letters)                  
    elif type==2:          
     letters="[CircularGrid]"+letters
     test.circularGrid(x, 1, 2,letters,y)
