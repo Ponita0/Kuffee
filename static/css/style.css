@@ -1,0 +1,226 @@
+
+html, 
+body {
+    height: 100%;
+}
+body{
+     background-color: #1a1a1b; 
+     font-family: 'Times New Roman', Times, serif;
+
+}
+footer {
+    text-align: center;
+    font-family: 'Cairo', sans-serif;
+  }
+.btn{
+
+font-family: 'Cairo', sans-serif;
+font-weight: 0;
+height: 50px;
+font-size: 14px;
+color: #fff;
+background: linear-gradient(75deg, #060707 0%, #441866 89%);
+padding: 10px 30px;
+border: solid #365f87 1px;
+box-shadow: rgb(46, 29, 201) 0px 0px 9px 6px;
+border-radius: 12px;
+margin: 50px;
+transition : 361ms;
+transform: translateY(0);
+flex-direction:row-reverse;
+align-items: center;
+cursor: pointer;
+text-transform: lowercase;
+}
+
+.btn:hover{
+
+transition : 200ms;
+padding: 10px 41px;
+transform : translateY(-1px);
+background: linear-gradient(75deg, #43475d 0%, #7400cc 89%);
+border: solid 1px #0066cc;
+}
+.css-input {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 0;
+    font-size: 18px;
+    color: #fff;
+    background: linear-gradient(75deg, #101010 0%, #1c0130 89%);
+    padding: 5px 10px;
+    border: solid #365f87 1px;
+    box-shadow: rgb(46, 29, 201) 0px 0px 9px 6px;
+    border-radius: 10px;
+    transition : 350ms;
+    transform: translateY(0);
+    display: flex;
+    flex-direction:row-reverse;   
+    cursor: auto;
+    text-transform: lowercase;
+    width: 300px;
+    direction: rtl;
+}
+.css-input:focus {
+    outline:none;
+    transition : 200ms;
+    border: solid #84888c 2px;
+
+    padding: 10px 20px;
+transform : translateY(-1px);
+}
+.center {
+    
+    display: flex;
+    justify-content: end;
+  }
+  
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+#wrapper {
+    width: 550px;
+    overflow: visible;
+    float: inline-start;
+}
+#first {
+    align-self: center;
+    width: 400px;
+    height: 60px;
+
+    float:inline-start; /* add this */
+    
+}
+#second {   
+    float: inline-end; /* add this */
+}
+#third {   
+    float: inline-end; /* add this */
+}
+ .title{
+    color: rgb(224, 158, 43);
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 30px;
+    width: 250px;
+
+ }
+ #titleId{
+    float: inline-start; /* add this */
+    width: auto;
+
+ }
+ .container > div {
+    float: inline-start;
+}
+
+.footer{
+    color:#fff;
+    font-size: 20px;
+    
+}
+p{
+    color: #fff;
+    font-family: 'Cairo', sans-serif;
+   
+
+}
+
+.table-wrapper{
+    margin: 100px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+.fl-table {
+    display:table;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    border-collapse: collapse;
+    width: 50%;
+    max-width: 100%;
+    background-color: white;
+    font-family: 'Cairo';
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 5px;
+}
+
+.fl-table td {
+    border-right: 3px solid gray;
+    font-size: 12px;
+    width: 20px;
+}
+
+.fl-table thead tr {
+    color: #ffffff;
+    background: rgb(33, 42, 33);    
+    width: 20px;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #cd8989;
+}
+h1{
+    color: white
+}
+
+.title-holder {
+    top: 50%;
+    left: 40%;
+    position: absolute;
+  }
+  .titlee {
+    font-family: 'cairo', sans-serif;
+    font-size: 30px;
+    color: #c4c2c4;
+    width: 0;
+    overflow: hidden;
+    white-space: no-wrap;
+    display:block;
+    border-right: 3px solid #f9d566;
+    animation: typewriter 5s steps(7) infinite, blinking-cursor 0.8s infinite;
+    animation-fill-mode: forwards
+  }
+  
+  @keyframes typewriter {
+    0% { width:0 }
+    25% { width: 70% }
+    48% { width: 100% }
+    50% { width: 100% }
+    55% { width: 100% }
+    75% { width: 70%; }
+    85% { width: 30%; }
+    100% { width: 0; }
+  }
+  
+  @keyframes blinking-cursor {
+    from { border-color: transparent }
+    to { border-color: #f9d566 }
+  }
+
+  div#content {
+    display: none;
+    }
+
+div#loading {
+    top: 200 px;
+    margin: auto;
+    position: absolute;
+    z-index: 1000;
+    width: 160px;
+    height: 24px;
+    background: url(loadingimage.gif) no-repeat;
+    cursor: wait;
+    }
