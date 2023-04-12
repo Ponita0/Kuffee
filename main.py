@@ -67,6 +67,7 @@ def generate():
     test.circularGrid(x, 1, 2,letters,y)
    elif type==3:
     letters="[CircWithRect]"+letters
+    
     test.circWithRect(x,y,600,30,letters)
                        
 
