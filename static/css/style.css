@@ -243,10 +243,10 @@ div#loading {
 						
 			border-radius: 5px;
 			margin: 50px;
-            transition : transform 1000MS ease-out;
-
-   
-    
+            transition : transform 1000MS ease-out;       
+    }
+    .box a{
+        height: inherit;
     }
              
     .outer-box-container .box:hover{
@@ -271,6 +271,7 @@ div#loading {
     }
     .box img {
         max-width: 80%;    
+        width: 80%;
         border-radius: 12px;        
     }    
     .box button {
@@ -284,6 +285,7 @@ div#loading {
         margin: 4px 2px;
         cursor: pointer;
         width: auto;
+        font-size: 16px;
         max-width:100%;  
     }    
     @media (max-width: 768px) {
