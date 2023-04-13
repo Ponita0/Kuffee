@@ -22,7 +22,7 @@
             <form action="{{ url_for('wait') }}" method="post">
                 <div class="row">
                     
-                    <div class="box">
+                    <div class="box" style="width: 40%;">
                         <center>
 
                             <p>
@@ -36,7 +36,7 @@
                         </center>
                     </div>
 
-                    <div class="box">
+                    <div class="box" style="width: 40%;">
                         <center>
                             
                             <p style="margin-top: 30px; margin-bottom: 10px; ">
@@ -54,9 +54,18 @@
                 </div>
                 <input type="text" name="type" class="css-input" style="width: 40px; visibility: hidden;" value="1">
                 
-                <input type="submit" value="أنشئ الشبكة" class="btn">
+                <input type="submit" value="أنشئ الشبكة" class="btn" style="font-size: 20px; margin-top: -90px;">
 
+                
+                
             </form>        
+            <button class="btn" style="font-size: 20px;">
+                <a href="{{url_for('home')}}">
+
+                    الصفحة الرئيسية
+                </a>
+
+                </button>
 </center>
 
 
