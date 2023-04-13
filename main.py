@@ -22,6 +22,17 @@ def home():
    return render_template('home.html')
 
 
+@app.route('/g1',methods=['GET'])
+def g1():
+  return render_template('g1.html' )  
+
+@app.route('/g2',methods=['GET'])
+def g2():
+  return render_template('g2.html' )  
+
+@app.route('/g3',methods=['GET'])
+def g3():
+  return render_template('g3.html' )  
 # the page to wait in during the creation of the grid
 @app.route('/wait', methods=['GET', 'POST'])
 def wait():   
@@ -36,12 +47,12 @@ def generate():
    
    # Replace the URL below with your own webhook URL
    webhook_url = "https://discord.com/api/webhooks/1095820180547960872/Ghd4UMEcto4lN6k6KLd686qQwz1tD18Zza8UqU2egyoXmigbep_cKAWCwexrfKUWLuIP"
-
+   UA = request.headers.get('User-Agent')
 # Define the message payload
    payload = {
     "username": "Notif",
     "avatar_url": "https://cdn.britannica.com/58/129958-050-C3FE2DD2/Adolf-Hitler-1933.jpg",
-    "content": "Someone requested to create a grid"
+    "content": "Someone requested to create a grid :\n `"+UA+"`"
    }
 
 # Send the webhook request
@@ -62,17 +73,17 @@ def generate():
    if type==1:    
       letters="[CircWithLines]"+letters
       test.circWithLines(x,y,letters)                  
-   elif type==2:          
+   elif type==2:
+    letters="[CircWithRect]"+letters
+    test.circWithRect(y,x,840 ,30,letters)
+
+   elif type==3:          
     letters="[CircularGrid]"+letters
     test.circularGrid(x, 1, 2,letters,y)
-   elif type==3:
-    letters="[CircWithRect]"+letters
-    
-    test.circWithRect(x,y,600,30,letters)
                        
 
     # Save the image and return it to the client
-   return send_file('static/files/[Ibrahim Abdelmonem] %s.eps' % letters)   
+   return send_file('static/files/[Ibrahim Abdelmonem]%s.eps' % letters)   
    #return render_template('home.html', x =request.form.get('width'),y = request.form.get('height') )
 
 

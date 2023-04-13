@@ -17,39 +17,37 @@
         
         <center>
             <h1 class="title">
-                K.G.G (Kufi Grid Generator)
-            </h1>         
-
-    <div id="titleId">
-    </div>
+                Kuffee
+            </h1>             
     <div id="wrapper">
-        <div id="first">
-    
-            
+        <div id="first">               
+             
         </div>
-        <div id="second">
-            
-            <form action="{{ url_for('wait') }}" method="post">
-                <p>
-                   عدد المربعات العرضية
-                </p>
-                <input type="text" name="width" class="css-input" style="width: 50px">
-                <p style="margin-top: 30px; margin-bottom: 10px; ">
-                    عدد المربعات الطولية
-                </p>
-                <input type="text" name="height" class="css-input" style="width: 40px;">
-                type
-                <input type="text" name="type" class="css-input" style="width: 40px;">
+        <div class="row">
+            <div class="box">
+                <a href="{{url_for('g1')}}">
+                <img src="{{ url_for('static', filename='imgs/g1.png') }}">
+                <button class="btn">الشبكة الشعاعية 1
 
-                <input type="submit" value="Generate" class="btn">
+                    </a>
+                </button>                                
 
-            </form>
-            <!-- <button class="btn" onclick="httpGet()">
-        <span class="material-symbols-outlined">
-            search
-        </span>            
-    </button> -->
-</div>
+            </div>
+            <div class="box">
+                <a href="{{url_for('g2')}}">
+
+                    <img src="{{ url_for('static', filename='imgs/g2.png') }}">
+                    <button class="btn">الشبكة الشعاعية 2</button>                
+                </a>
+                </div>
+            <div class="box">
+                <a href="{{url_for('g3')}}">
+
+                    <img src="{{ url_for('static', filename='imgs/g3.png') }}">
+                    <button class="btn">الشبكة الدائرية </button>                
+                </a>
+            </div>
+        </div>       
     </div>
 
 </center>

@@ -224,3 +224,55 @@ div#loading {
     background: url(loadingimage.gif) no-repeat;
     cursor: wait;
     }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .box {
+        width: 40%;
+        height: auto;
+        margin-bottom: 50px;
+        margin-right: 10px;
+        text-align: center;        
+             
+    }
+    
+    .box img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }    
+    .box button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }    
+
+    a:visited {
+        color: inherit;
+        text-decoration: solid;
+      }
+    a:link {
+        text-decoration: none;
+      }
+      
+    a:visited {
+        text-decoration: none;
+      }a:link {
+        text-decoration: none;
+      }
+      
+      a:visited {
+        text-decoration: none;
+      }
