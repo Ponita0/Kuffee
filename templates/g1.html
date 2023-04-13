@@ -28,7 +28,7 @@
                             <p>
                                 عدد الخطوط ( عرض الجملة )
                             </p>        
-                            <input type="text" name="width" class="css-input" style="width: 100px">
+                            <input type="text" name="width" class="css-input" style="width: 100px" pattern="[0-9]+" required>
                             <img src="{{ url_for('static', filename='imgs/g1-2.png') }}" width="300px" style="margin-top: 20px;">
                             <p style="margin-top: -5px;">
                                 مثال
@@ -42,7 +42,7 @@
                             <p style="margin-top: 30px; margin-bottom: 10px; ">
                                 عدد الدوائر (ارتفاع الجملة)
                             </p>
-                            <input type="text" name="height" class="css-input" style="width: 100px">
+                            <input type="text" name="height" class="css-input" style="width: 100px" pattern="[0-9]+" required>
                             <img src="{{ url_for('static', filename='imgs/g1-1.png') }}" width="300px" style="margin-top: 20px;">
                             <p style="margin-top: -5px;">
                                 مثال
