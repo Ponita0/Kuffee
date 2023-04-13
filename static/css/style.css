@@ -1,28 +1,42 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Tajawal&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 html, 
 body {
     height: 100%;
 }
 body{
-     background-color: #1a1a1b; 
-     font-family: 'Times New Roman', Times, serif;
+     background-color: #212121; 
+     font-family: 'Tajawal', sans-serif;
+
 
 }
+p{
+    color: #ffffff;
+    font-family: 'Changa', sans-serif;
+
+
+    font-size: 20px;
+
+}
+
 footer {
     text-align: center;
     font-family: 'Cairo', sans-serif;
   }
 .btn{
 
-font-family: 'Cairo', sans-serif;
-font-weight: 0;
+    font-family: 'Changa', sans-serif;
+
+font-weight: 400;
 height: 50px;
 font-size: 14px;
-color: #fff;
-background: linear-gradient(75deg, #060707 0%, #441866 89%);
+color: #ffffff;
+/* background: linear-gradient(75deg, #D5B4B4 0%, #E4D0D0 89%); */
+background-color: #323232;
 padding: 10px 30px;
-border: solid #365f87 1px;
-box-shadow: rgb(46, 29, 201) 0px 0px 9px 6px;
+border: none #B83B5E 1px;
+/* box-shadow: rgb(17, 17, 44) 0px 0px 9px 6px; */
 border-radius: 12px;
 margin: 50px;
 transition : 361ms;
@@ -45,11 +59,12 @@ border: solid 1px #0066cc;
     font-family: 'Cairo', sans-serif;
     font-weight: 0;
     font-size: 18px;
-    color: #fff;
-    background: linear-gradient(75deg, #101010 0%, #1c0130 89%);
+    color: #212121;
+    /* background: linear-gradient(75deg, #E4D0D0 0%, #F5EBEB 89%); */
+    background-color: #0D7377;
     padding: 5px 10px;
-    border: solid #365f87 1px;
-    box-shadow: rgb(46, 29, 201) 0px 0px 9px 6px;
+    border: none #e1abab 1px;
+    /* box-shadow: rgb(159, 157, 177) 0px 0px 9px 6px; */
     border-radius: 10px;
     transition : 350ms;
     transform: translateY(0);
@@ -101,10 +116,10 @@ transform : translateY(-1px);
     float: inline-end; /* add this */
 }
  .title{
-    color: rgb(224, 158, 43);
-    font-family: 'Reem Kufi', sans-serif;
-    font-size: 30px;
-    width: 250px;
+    color: #B83B5E;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 50px;
+    width: 250px;    
 
  }
  #titleId{
@@ -120,12 +135,6 @@ transform : translateY(-1px);
     color:#fff;
     font-size: 20px;
     
-}
-p{
-    color: #fff;
-    font-family: 'Cairo', sans-serif;
-   
-
 }
 
 .table-wrapper{
@@ -240,14 +249,23 @@ div#loading {
         text-align: center;       
              
     }
-    
+    @media (max-width: 768px) {
+        .box-container {
+            flex-direction: column;
+            margin: 10px;
+        }
+        .box {
+            margin-bottom: 20px;
+        }
+    }
     .box img {
         max-width: 100%;
         height: auto;
         margin-bottom: 10px;
+        border-radius: 12px;
     }    
     .box button {
-        background-color: #4CAF50;
+        background-color: #4ca74f;
         color: white;
         border: none;
         padding: 10px 20px;
@@ -257,6 +275,7 @@ div#loading {
         font-size: 16px;
         margin: 4px 2px;
         cursor: pointer;
+        width: auto;
     }    
 
     a:visited {
@@ -276,3 +295,4 @@ div#loading {
       a:visited {
         text-decoration: none;
       }
+    
