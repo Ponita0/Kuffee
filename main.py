@@ -18,8 +18,14 @@ handler.setLevel(logging.INFO)
 app.logger.addHandler(handler)
 
 
+#error page
+@app.route('/success',methods=['GET'])
+def success():
+   return render_template('success.html')
 
-  
+
+def error(err):
+  return render_template('error.html',msg=err)
 # home page
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -71,7 +77,7 @@ def home():
 
 
 @app.route('/g1',methods=['GET'])
-def g1():
+def g1():  
   return render_template('g1.html' )  
 
 @app.route('/g2',methods=['GET'])
@@ -85,7 +91,7 @@ def g3():
 @app.route('/wait', methods=['GET', 'POST'])
 def wait():   
    print(request.form.get('width'))
-   print(request.form.get('height'))
+   print(request.form.get('height'))   
    return render_template('waiting.html', width =request.form.get('width'),height = request.form.get('height'),type=request.form.get('type') )
 
 
@@ -93,6 +99,8 @@ def wait():
 @app.route('/generate', methods=['GET', 'POST'])
 def generate():
    webhook_url = "https://discord.com/api/webhooks/1096040471198969876/KBJ0OCoQYeF7VajZq-W9G4_UHekLi8WOLybGZg8i-XpHG9hoJWj7_-Kee1ifvPCPv-z3"
+   if request.args.get('width').isnumeric() == False or request.args.get('height').isnumeric()== False:
+      return error("يلزم كتابة المطلوب من الارقام و باللغة الانجليزية")
    UA = request.headers.get('User-Agent')
    ip_address = request.remote_addr         
    embed = {
@@ -160,22 +168,37 @@ def generate():
    y = int(request.args.get('height'))
    type = int(request.args.get('type'))
    print("received dimensions: ", x, y)   
-   if type==1:    
+   if type==1:
+      if x>100:
+        return error("اييييييييه؟ هتكتب ألفية ابن مالك؟")    
+      if y>10:
+        return error("بذمتك مش مكسوف من نفسك و انت عايز تبني برج خليفه على شبكة كوفي")            
       letters=f"[شعاعية 1][{x}x{y}]"+letters   
       test.circWithLines(x,y,letters)                  
    elif type==2:
+    if y>20:
+        return error("اييييييييه؟ هتكتب ألفية ابن مالك؟")    
+    if x>50:
+        return error("بذمتك مش مكسوف من نفسك و انت عايز تبني برج خليفه على شبكة كوفي")    
     letters=f"[شعاعية 2][{x}x{y}]"+letters   
     test.circWithRect(y,x,840 ,30,letters)
 
-   elif type==3:          
+   elif type==3:    
+    if x>150:
+        return error("اييييييييه؟ هتكتب ألفية ابن مالك؟")    
+    if y>20:
+        return error("بذمتك مش مكسوف من نفسك و انت عايز تبني برج خليفه على شبكة كوفي")          
     letters=f"[دائرية][{x}x{y}]"+letters   
-
     test.circularGrid(x, 1, 2,letters,y)
                        
 
     # Save the image and return it to the client
-   return send_file('static/files/[Ibrahim Abdelmonem]%s.eps' % letters)   
+   #return send_file('static/files/[Kuffee]%s.eps' % letters)   
+   return render_template('success.html',name=('static/files/[Kuffee]%s.eps' % letters))
    #return render_template('home.html', x =request.form.get('width'),y = request.form.get('height') )
+@app.route('/download')
+def download():
+   return send_file(request.args.get('name'))
 
 
 if __name__ == '__main__':

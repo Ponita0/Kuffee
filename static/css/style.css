@@ -23,6 +23,7 @@ p{
 footer {
     text-align: center;
     font-family: 'Cairo', sans-serif;
+    font-size: 25px;
   }
 .btn{
 
@@ -175,7 +176,19 @@ h1{
     top: 50%;
     left: 40%;
     position: absolute;
+    top : 80%;
+    left: 47%;
   }
+  @media (max-width: 768px) {
+    .title-holder {
+        top: 50%;
+        left: 40%;
+        position: absolute;
+        top : 80%;
+        left: 30%;
+      }
+    
+}				
   .titlee {
     font-family: 'cairo', sans-serif;
     font-size: 30px;
