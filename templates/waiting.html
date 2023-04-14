@@ -23,7 +23,6 @@
    </style>
     <body onload="changeGif();">        
         <div class="gifHolder">
-
             <img id="gif" src="" alt="Random GIF"/>
         </div>
 
@@ -45,11 +44,10 @@
 
 
      <script>
-     window.location.replace('/generate?width={{width}}&height={{height}}&type={{type}}');
-     // Create an array of GIF links
-     var gifs = [
-     "https://media.tenor.com/13VnwKt5qS0AAAAS/waiting.gif",
-     "https://media.giphy.com/media/9G3wg7lH5DpxC/giphy.gif",
+         // Create an array of GIF links
+         var gifs = [
+             "https://media.tenor.com/13VnwKt5qS0AAAAS/waiting.gif",
+             "https://media.giphy.com/media/9G3wg7lH5DpxC/giphy.gif",
      "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjBhMzYyY2FlZjQ1ZmFhZGMyNjk3MGQyMWE3ZTgwNTFjM2I5OTkxZCZjdD1n/2WGDUTmsB4DzFuvZ2t/giphy.gif",
      "https://media.giphy.com/media/jc2PkKKr3clTBekMzn/giphy.gif"
       ];
@@ -60,11 +58,17 @@
         var index = Math.floor(Math.random() * gifs.length);
 
         // Get the img tag element
+        
         var img = document.getElementById("gif");
-
-        // Set the src attribute to the randomly picked GIF link
         img.src = gifs[index];
-      }
+        
+        // Set the src attribute to the randomly picked GIF link
+        setTimeout(function(){
+            
+            
+            window.location.replace('/generate?width={{width}}&height={{height}}&type={{type}}');
+        }, 400);
+    }
       </script> 
 
 </html>
