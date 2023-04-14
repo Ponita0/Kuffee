@@ -36,7 +36,7 @@ def circWithLines(widd, heii, name):
                 t.right(angle)
             ts = turtle.getscreen()
 
-            ts.getcanvas().postscript(file="static/files/[Ibrahim Abdelmonem]%s.eps" % name)
+            ts.getcanvas().postscript(file="static/files/[Kuffee]%s.eps" % name)
         except turtle.Terminator:
             pass
     
@@ -166,7 +166,7 @@ def circularGrid(number,ratioA,ratioB,name,n):
                 counter=counter+3
             ts = turtle.getscreen()
 
-            ts.getcanvas().postscript(file="static/files/[Ibrahim Abdelmonem]%s.eps" % name)
+            ts.getcanvas().postscript(file="static/files/[Kuffee]%s.eps" % name)
 
         except turtle.Terminator:
                 pass
@@ -274,7 +274,7 @@ def circWithRect(nCircles,nRects,rectWidth,rectHeight,name):
 
         ts = turtle.getscreen()
 
-        ts.getcanvas().postscript(file="static/files/[Ibrahim Abdelmonem]%s.eps" % name)   
+        ts.getcanvas().postscript(file="static/files/[Kuffee]%s.eps" % name)   
 
     p = multiprocessing.Process(target=mainF)
     p.start()
