@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Tajawal&display=swap');
 
 body{
-    background-color: #483434;
+    background-color: #303841;
 }
 .container-card {
-    background-color: #6B4F4F;
+    background-color: #3A4750;
     border-radius: 20px;
-    box-shadow: 0px 1px 8px 3px #2e2b2b;
+    box-shadow: 0px 1px 8px 3px #0f1415;
     padding: 20px;
     height: 90%;
     margin: 10px;
@@ -22,7 +22,7 @@ body{
     font-size: 24px;
     font-family: 'Tajawal', sans-serif;
     line-height: 1.5;
-    color: #EED6C4;
+    color: #f9e38e;
   }
 
   .personal-pic{
@@ -36,9 +36,7 @@ body{
       }
       .container-card p {
         font-size: 16px;
-        font-family: 'Tajawal', sans-serif;
         line-height: 1.5;
-        color: #EED6C4;
       }
     
 }	
@@ -48,3 +46,21 @@ footer{
 .f{
   color: red;  
 }
+  
+a:visited {
+    color: inherit;
+    text-decoration: solid;
+  }
+a:link {
+    text-decoration: underline;
+  }
+  
+a:visited {
+    text-decoration: underline;
+  }a:link {
+    text-decoration: underline;
+  }
+  
+  a:visited {
+    text-decoration: none;
+  }

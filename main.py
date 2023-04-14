@@ -169,24 +169,24 @@ def generate():
    type = int(request.args.get('type'))
    print("received dimensions: ", x, y)   
    if type==1:
-      if x>100:
+      if x>150:
         return error("اييييييييه؟ هتكتب ألفية ابن مالك؟")    
-      if y>10:
+      if y>25:
         return error("بذمتك مش مكسوف من نفسك و انت عايز تبني برج خليفه على شبكة كوفي")            
       letters=f"[شعاعية 1][{x}x{y}]"+letters   
       test.circWithLines(x,y,letters)                  
    elif type==2:
-    if y>20:
-        return error("اييييييييه؟ هتكتب ألفية ابن مالك؟")    
-    if x>50:
+    if y>25:
         return error("بذمتك مش مكسوف من نفسك و انت عايز تبني برج خليفه على شبكة كوفي")    
+    if x>150:
+        return error("اييييييييه؟ هتكتب ألفية ابن مالك؟")    
     letters=f"[شعاعية 2][{x}x{y}]"+letters   
     test.circWithRect(y,x,840 ,30,letters)
 
    elif type==3:    
-    if x>150:
+    if y>150:
         return error("اييييييييه؟ هتكتب ألفية ابن مالك؟")    
-    if y>20:
+    if x>20:
         return error("بذمتك مش مكسوف من نفسك و انت عايز تبني برج خليفه على شبكة كوفي")          
     letters=f"[دائرية][{x}x{y}]"+letters   
     test.circularGrid(x, 1, 2,letters,y)

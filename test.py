@@ -186,7 +186,7 @@ def circWithRect(nCircles,nRects,rectWidth,rectHeight,name):
         r = 10
         turtle.setup(width=850, height=850)
         t = turtle.Turtle(visible=True)
-        t.speed(5)
+        t.speed(0)
         t.penup()
         t.goto(0,0)    
         t.setheading(270)
@@ -228,7 +228,7 @@ def circWithRect(nCircles,nRects,rectWidth,rectHeight,name):
         t.speed(0)
         t.pu()
         t.goto(0,0)       
-        t.speed(10)
+        t.speed(0)
         u = 20
         if nRects%2 !=0:
             nRects=nRects+1
