@@ -181,7 +181,7 @@ def generate():
     if x>150:
         return error("اييييييييه؟ هتكتب ألفية ابن مالك؟")    
     letters=f"[شعاعية 2][{x}x{y}]"+letters   
-    test.circWithRect(y,x,840 ,30,letters)
+    test.circWithRect(y,x,840 ,20,letters)
 
    elif type==3:    
     if y>150:
@@ -206,7 +206,7 @@ def serve_ads():
 
 
 if __name__ == '__main__':
-   #  app.run(host="0.0.0.0", port=80, debug=True)
     from waitress import serve
-    serve(app, host="0.0.0.0", port=80)
+  #  serve(app, host="0.0.0.0", port=80)
+    app.run(host="0.0.0.0", port=80, debug=True)
 

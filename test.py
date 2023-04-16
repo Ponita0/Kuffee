@@ -6,6 +6,8 @@ def circWithLines(widd, heii, name):
 
     def draw_turtle():
         t = turtle.Turtle(visible=False)
+        t.pensize(0.1)
+        t.color("gray")
         t.speed(0)
         wid = widd + 1
         # requiredHeight = 7
@@ -58,23 +60,21 @@ def circularGrid(number,ratioA,ratioB,name,n):
         n=f
         turtle.setup(width=850, height=850)
         t = turtle.Turtle(visible=True)
+        t.pensize(0.1)
+        t.color("gray")
+
         try :
             if n%2 == 0 :
                 n=n-1
             n=int((n+1)/2)
-            print(n)
             t.speed(0) # 1:slowest, 3:slow, 5:normal, 10:fast, 0:fastest
 
             width = turtle.window_width() -50
             height = turtle.window_height() -50
 
-            print(width , " : " , height)
-
             ratioTotal = ratioA+ratioB
             totalParts = (ratioA+ratioB)*n
-            print("total parts: ",totalParts)
-            x =  height/(totalParts)
-            print("x: ",x)
+            x =  height/(totalParts) 
             # max height = 3 * X * n 
             # height = 3 * x * n
 
@@ -183,9 +183,12 @@ def circWithRect(nCircles,nRects,rectWidth,rectHeight,name):
     z=nRects
     def mainF():      
         nRects=z
-        r = 10
-        turtle.setup(width=850, height=850)
-        t = turtle.Turtle(visible=True)
+        r = 300
+        turtle.setup(width=890, height=890)
+        t = turtle.Turtle(visible=False)
+        t.pensize(0.1)
+        t.color("gray")
+
         t.speed(0)
         t.penup()
         t.goto(0,0)    
@@ -204,11 +207,11 @@ def circWithRect(nCircles,nRects,rectWidth,rectHeight,name):
                 t.pu()
                 t.setheading(0)                         
                 t.pendown()
-                t.circle(r,steps=100)
-                # draw axis
+                t.circle(r,steps=1000)
+                # draw axis              
+
 
         def drawRect(width,height,fromCenter):
-            print(width," : " , height)
             if fromCenter == True:
                 t.rt(90)
                 t.pu()
@@ -225,10 +228,8 @@ def circWithRect(nCircles,nRects,rectWidth,rectHeight,name):
             t.lt(90)
             t.fd(width/2)    
 
-        t.speed(0)
         t.pu()
         t.goto(0,0)       
-        t.speed(0)
         u = 20
         if nRects%2 !=0:
             nRects=nRects+1
@@ -245,11 +246,12 @@ def circWithRect(nCircles,nRects,rectWidth,rectHeight,name):
         
 
         # start drawing circles 
+        maxR =rectWidth/2
         t.speed(0)
         t.pu()
         t.goto(0,0)
         t.setheading(270)    
-        t.fd(r+10)    
+        # t.fd(maxR+10)    
         t.pd()
         counter =1
         x=r    
@@ -258,32 +260,71 @@ def circWithRect(nCircles,nRects,rectWidth,rectHeight,name):
         t.setheading(270)
         t.pu()
         t.fd(rectHeight)
+        t.goto(0,0)
+        t.setheading(270)
+        t.fd(maxR)
         t.pd()
+        # for i in range(nCircles):
+        #             drawCirc(rectHeight*(counter),False)   
+        #             t.setheading(270)            
+        #             t.pu()
+        #             t.fd(rectHeight)
+        #             t.pd()          
+        #             drawCirc(rectHeight*(counter)+rectHeight,False)      
+        #             t.setheading(270)
+        #             t.pu()
+        #             t.fd(rectHeight*2)
+        #             t.pd()   
+        #             counter=counter+3 
+        t.pu()
+        t.goto(0,0)        
+        drawCirc(50,True)
+        t.pu()
+        t.goto(0,0)
+        t.setheading(270)
+        t.fd(maxR)
+        t.pd()
+
+        currentR = maxR
+        x = (maxR-50)/nCircles
+        x = ((maxR-50))/ (3*nCircles)
+
+        # 3x * n = (maxR-50)/nCircles
+
         for i in range(nCircles):
-                    drawCirc(rectHeight*(counter),False)   
-                    t.setheading(270)            
-                    t.pu()
-                    t.fd(rectHeight)
-                    t.pd()          
-                    drawCirc(rectHeight*(counter)+rectHeight,False)      
-                    t.setheading(270)
-                    t.pu()
-                    t.fd(rectHeight*2)
-                    t.pd()   
-                    counter=counter+3 
+            drawCirc(currentR*(counter),False)
+            currentR=currentR-x
+            t.pu()
+            t.setheading(90)            
+            t.fd(x)
+            t.setheading(0)
+            drawCirc(currentR*(counter),False)
+            t.pu()
+            t.setheading(90)
+            t.fd(x*2)
+            t.pu()
+            currentR=currentR-x*2
 
-        ts = turtle.getscreen()
 
-        ts.getcanvas().postscript(file="static/files/[Kuffee]%s.eps" % name)   
+        # Set pen position to the edge of the drawing area      
+
+        # Hide the turtle from view
+
+        ts = t.getscreen()
+        canvas = ts.getcanvas()
+        canvas.postscript(file="static/files/[Kuffee]%s.eps" % name)
+                
+
+        
 
     p = multiprocessing.Process(target=mainF)
     p.start()
     p.join()
+    
     return "Generated turtle image"
 
 
-
-#circWithRect(10,8,700,20)
+#   circWithRect(9,20,845,10,"testing")
 #circularGrid(7,1,2,"s",50)
 #circWithLines(44,7,"sff")
     # turtle.exitonclick()
