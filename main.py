@@ -200,6 +200,10 @@ def generate():
 def download():
    return send_file(request.args.get('name'))
 
+@app.route('/ads.txt')
+def serve_ads():
+    return send_from_directory(app.static_folder, 'ads.txt')
+
 
 if __name__ == '__main__':
    #  app.run(host="0.0.0.0", port=80, debug=True)
