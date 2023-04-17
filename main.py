@@ -29,7 +29,7 @@ def error(err):
 # home page
 @app.route('/', methods=['GET', 'POST'])
 def home():
-   webhook_url = "https://discord.com/api/webhooks/1095820180547960872/Ghd4UMEcto4lN6k6KLd686qQwz1tD18Zza8UqU2egyoXmigbep_cKAWCwexrfKUWLuIP"
+   webhook_url = "https://discord.com/api/webhooks/1097447606659076146/99f_i03thQ6MBRF72yJuDBM7i_Hj9oKP14NsWuLCz1WO6kEcheYjM11IQlmcnDbVVT7a"
    UA = request.headers.get('User-Agent')
    ip_address = request.remote_addr         
    embed = {
@@ -98,7 +98,7 @@ def wait():
 # request to create the grid
 @app.route('/generate', methods=['GET', 'POST'])
 def generate():
-   webhook_url = "https://discord.com/api/webhooks/1096040471198969876/KBJ0OCoQYeF7VajZq-W9G4_UHekLi8WOLybGZg8i-XpHG9hoJWj7_-Kee1ifvPCPv-z3"
+   webhook_url = "https://discord.com/api/webhooks/1097447760346746991/g8khV6HfkpI0WOL9ED4TfJxm23z-CWiu3iVuZiZx5ItCg_9Vea-q6r8XME3--ysvMulm"
    if request.args.get('width').isnumeric() == False or request.args.get('height').isnumeric()== False:
       return error("يلزم كتابة المطلوب من الارقام و باللغة الانجليزية")
    UA = request.headers.get('User-Agent')
