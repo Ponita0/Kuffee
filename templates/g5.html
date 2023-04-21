@@ -22,16 +22,19 @@
     </script>
     <body>
         <title>
-            Grid 3
+            Grid 5
         </title>
         <center>
             <h1 class="title">
                 Kuffee
             </h1>                 
             <form action="{{ url_for('wait') }}" method="post">
+                <H1 style="color: red;">
+                    ** Under development **
+                </H1>
                 <div class="box-container">
                     
-                    <div class="box">
+                    <!-- <div class="box">
                         <center>
 
                             <p>
@@ -44,17 +47,17 @@
                                     مثال
                                 </p>
                         </center>
-                    </div>
+                    </div> -->
 
                     <div class="box">
                         <center>
                             
                             <p style="margin-top: 30px; margin-bottom: 10px; ">
                                
-                            عدد دوائر الفراغ                            
+                           عدد الوحدات (الطول = العرض)                           
                                                        </p>
                             <input type="text" name="width" class="css-input" style="width: 100px" >
-                            <img src="{{ url_for('static', filename='imgs/g3-2.png') }}" width="300px" style="margin-top: 20px;">
+                            <img src="{{ url_for('static', filename='imgs/g5-1.png') }}" width="100px" style="margin-top: 20px; width: 50%;">
                             <p style="margin-top: -5px;">
                                 مثال
                             </p>
@@ -63,20 +66,22 @@
                     </div>
                     
                 </div>
-                <input type="text" name="type" class="css-input" style="width: 40px; visibility: hidden;" value="3">
+                <input type="text" name="type" class="css-input" style="width: 1px; visibility: hidden;" value="5">
+                <input type="text" name="height" class="css-input" style="width: 1px; visibility: hidden;" value="20">
+
                 
                 <input type="submit" value="أنشئ الشبكة" class="btn" style="font-size: 20px; margin-top: -90px;">
                 
             </form>        
             <button class="btn" style="font-size: 20px; margin-top: -20px;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50" height="50" preserveAspectRatio="xMidYMid meet" ><defs><clipPath id="__lottie_element_2"><rect width="50" height="50" x="0" y="0"></rect></clipPath></defs><g clip-path="url(#__lottie_element_2)"><g transform="matrix(1,0,0,1,0,-1)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,25,13.027000427246094)"><path stroke-linecap="round" stroke-linejoin="round" fill-opacity="0" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="2" d=" M23.587112426757812,10.049394607543945 C23.587112426757812,10.049394607543945 0.11218130588531494,-3.993905544281006 0.11218130588531494,-3.993905544281006 C0.11218130588531494,-3.993905544281006 -23.573495864868164,10.059986114501953 -23.573495864868164,10.059986114501953"></path></g></g><g transform="matrix(0.9931171536445618,0,0,0.9931171536445618,0.1720714569091797,0.1720714569091797)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,25,38.5)"><path stroke-linecap="round" stroke-linejoin="round" fill-opacity="0" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="2" d=" M-6.039002895355225,8.589083671569824 C-6.41265344619751,4.839658737182617 -6.199219703674316,-4.077700138092041 -5.995640754699707,-8.163276672363281 C-5.995640754699707,-8.163276672363281 6.004359245300293,-8.163276672363281 6.004359245300293,-8.163276672363281 C6.231825351715088,-4.077700138092041 6.464668273925781,4.794783592224121 6.040379524230957,8.592754364013672"></path></g></g><g transform="matrix(0.9931171536445618,0,0,0.9931171536445618,0.1720714569091797,0.1720714569091797)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,25,34)"><path stroke-linecap="round" stroke-linejoin="round" fill-opacity="0" stroke="rgb(0,0,0)" stroke-opacity="1" stroke-width="2" d=" M19.899511337280273,-13.303760528564453 C20.38398551940918,-5.970403671264648 20.91304588317871,6.4583234786987305 20.142475128173828,14.164041519165039 C20.142475128173828,14.164041519165039 -20.131921768188477,14.180560111999512 -20.131921768188477,14.180560111999512 C-20.90249252319336,6.474842071533203 -20.38949203491211,-5.970403671264648 -19.90639305114746,-13.303760528564453"></path></g></g></g></svg>
+                
                 <a href="{{url_for('home')}}">
-
-                    الصفحة الرئيسية
-                </a>
-
-                </button>
-</center>
-
+                الصفحة الرئيسية
+                
+                
+                </a>            
+            </button>
 
     </body>
 

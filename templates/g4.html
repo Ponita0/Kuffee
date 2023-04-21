@@ -22,27 +22,30 @@
     </script>
     <body>
         <title>
-            Grid 3
+            Grid 4
         </title>
         <center>
             <h1 class="title">
                 Kuffee
             </h1>                 
             <form action="{{ url_for('wait') }}" method="post">
+                <H1 style="color: red;">
+                    ** Under development **
+                </H1>
                 <div class="box-container">
                     
                     <div class="box">
                         <center>
 
                             <p>
-                                عدد وحدات الشبكة الغير منتظمة
+                                العرض
                             </p>        
                             <input type="text" name="height" class="css-input" style="width: 100px">
-                            <img src="{{ url_for('static', filename='imgs/g3-1.png') }}" width="300px" style="margin-top: 20px;">
+                            <!-- <img src="{{ url_for('static', filename='imgs/g3-1.png') }}" width="300px" style="margin-top: 20px;"> -->
                                 
-                                <p style="margin-top: -5px;">
+                                <!-- <p style="margin-top: -5px;">
                                     مثال
-                                </p>
+                                </p> -->
                         </center>
                     </div>
 
@@ -51,19 +54,19 @@
                             
                             <p style="margin-top: 30px; margin-bottom: 10px; ">
                                
-                            عدد دوائر الفراغ                            
+                            الطول                  
                                                        </p>
                             <input type="text" name="width" class="css-input" style="width: 100px" >
-                            <img src="{{ url_for('static', filename='imgs/g3-2.png') }}" width="300px" style="margin-top: 20px;">
+                            <!-- <img src="{{ url_for('static', filename='imgs/g3-2.png') }}" width="300px" style="margin-top: 20px;">
                             <p style="margin-top: -5px;">
                                 مثال
-                            </p>
+                            </p> -->
                         </center>
                         
                     </div>
                     
                 </div>
-                <input type="text" name="type" class="css-input" style="width: 40px; visibility: hidden;" value="3">
+                <input type="text" name="type" class="css-input" style="width: 40px; visibility: hidden;" value="4">
                 
                 <input type="submit" value="أنشئ الشبكة" class="btn" style="font-size: 20px; margin-top: -90px;">
                 

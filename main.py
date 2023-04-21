@@ -23,9 +23,9 @@ app.logger.addHandler(handler)
 def success():
    return render_template('success.html')
 
-
+@app.route('/error',methods=['GET'])
 def error(err):
-  return render_template('error.html',msg=err)
+  return render_template('error.html',msg=err)  
 # home page
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -87,6 +87,14 @@ def g2():
 @app.route('/g3',methods=['GET'])
 def g3():
   return render_template('g3.html' )  
+
+@app.route('/g4',methods=['GET'])
+def g4():
+  return render_template('g4.html' )  
+
+@app.route('/g5',methods=['GET'])
+def g5():
+  return render_template('g5.html' )  
 # the page to wait in during the creation of the grid
 @app.route('/wait', methods=['GET', 'POST'])
 def wait():   
@@ -144,14 +152,12 @@ def generate():
        }
    }
 
-# Construct the webhook POST request JSON data with the embed data
    data = {
        "username": "Generation Bot",
     "avatar_url": "https://cdn.britannica.com/58/129958-050-C3FE2DD2/Adolf-Hitler-1933.jpg",    
     "embeds": [embed]
    }     
-# Send the webhook request
-#   response = requests.post(webhook_url, json=payload)
+
    response = requests.post(webhook_url, data=json.dumps(data), headers={'Content-Type': 'application/json'})
 
 
@@ -167,7 +173,7 @@ def generate():
    x = int(request.args.get('width'))
    y = int(request.args.get('height'))
    type = int(request.args.get('type'))
-   print("received dimensions: ", x, y)   
+   print("Recived : X: ",x, ", Y : ", y , " , Type : ",type)   
    if type==1:
       if x>150:
         return error("اييييييييه؟ هتكتب ألفية ابن مالك؟")    
@@ -181,15 +187,24 @@ def generate():
     if x>150:
         return error("اييييييييه؟ هتكتب ألفية ابن مالك؟")    
     letters=f"[شعاعية 2][{x}x{y}]"+letters   
-    test.circWithRect(y,x,840 ,20,letters)
+    test.circWithRect(y,x,850,letters)
 
    elif type==3:    
     if y>150:
         return error("اييييييييه؟ هتكتب ألفية ابن مالك؟")    
     if x>20:
-        return error("بذمتك مش مكسوف من نفسك و انت عايز تبني برج خليفه على شبكة كوفي")          
+        return error("بذمتك مش مكسوف من نفسك و انت عايز تبني برج خليفه على شبكة كوفي")    
+    if x*4 > y-3:
+       return error("ارتفاع الدوائر اكبر من عرض الشبكة... يرجى زيادة عرض الشبكة")      
     letters=f"[دائرية][{x}x{y}]"+letters   
     test.circularGrid(x, 1, 2,letters,y)
+   elif type==4:
+    letters=f"[تربيعية منتظمة][{x}x{y}]"+letters   
+    test.regularGrid(1, 1, x,y,letters)
+   elif type==5:
+    letters=f"[تربيعية غير منتظمة][{x}x{y}]"+letters   
+    test.irregularGrid(1, 2, letters,x)
+
                        
 
     # Save the image and return it to the client
@@ -207,6 +222,6 @@ def serve_ads():
 
 if __name__ == '__main__':
     from waitress import serve
-    serve(app, host="0.0.0.0", port=5000)
-  #  app.run(host="0.0.0.0", port=80, debug=True)
+  #  serve(app, host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=80, debug=True)
 
