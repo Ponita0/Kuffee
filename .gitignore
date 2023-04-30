@@ -8,3 +8,5 @@ static/css/test.css
 templates/test.html
 
 test/
+
+.env

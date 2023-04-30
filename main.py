@@ -7,10 +7,13 @@ import turtle
 import logging
 import requests
 import datetime
-from logging.handlers import RotatingFileHandler
+import os
+from dotenv import load_dotenv
+from logging.handlers import  RotatingFileHandler
 
 
 app = Flask(__name__)
+load_dotenv()
 
 # Set up logging
 handler = RotatingFileHandler('app.log', maxBytes=10000, backupCount=1)
@@ -29,7 +32,7 @@ def error(err):
 # home page
 @app.route('/', methods=['GET', 'POST'])
 def home():
-   webhook_url = "https://discord.com/api/webhooks/1097447606659076146/99f_i03thQ6MBRF72yJuDBM7i_Hj9oKP14NsWuLCz1WO6kEcheYjM11IQlmcnDbVVT7a"
+   webhook_url = os.environ.get('visit')
    UA = request.headers.get('User-Agent')
    ip_address = request.remote_addr         
    embed = {
@@ -106,7 +109,7 @@ def wait():
 # request to create the grid
 @app.route('/generate', methods=['GET', 'POST'])
 def generate():
-   webhook_url = "https://discord.com/api/webhooks/1097447760346746991/g8khV6HfkpI0WOL9ED4TfJxm23z-CWiu3iVuZiZx5ItCg_9Vea-q6r8XME3--ysvMulm"
+   webhook_url = os.environ.get('generate')
    if request.args.get('width').isnumeric() == False or request.args.get('height').isnumeric()== False:
       return error("يلزم كتابة المطلوب من الارقام و باللغة الانجليزية")
    UA = request.headers.get('User-Agent')
