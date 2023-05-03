@@ -38,13 +38,30 @@
                    Telegram
                 </a>
             </p>
+            <div disabled>
+                <a href="{{url_for('home')}}">
+
+                    <button class="btn" id="b1" disabled >
+                        عودة للصفحة الرئيسية
+                    </button>
+                </a>
+                <a href="{{url_for('pdf')}}">
+                    <button class="btn" dir="rtl" id="b1">
+                        تحويل الملف PDF
+                    </button>
+                </a>
+            </div>
           </div>
           
     </body>
     <script>
         setTimeout(function(){
             
-            window.location.replace('/download?name={{name}}');
-}, 5000);
+             window.location.replace('/download?name={{name}}');
+            const button1 = document.getElementById("b1"); 
+            button1.disabled = false;
+
+
+}, 3000);
     </script>
 </html>
