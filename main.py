@@ -91,6 +91,10 @@ def g2():
 def g3():
   return render_template('g3.html' )  
 
+@app.route('/pdf',methods=['GET'])
+def pdf():
+   return render_template('pdf.html')
+   
 @app.route('/g4',methods=['GET'])
 def g4():
   return render_template('g4.html' )  
@@ -98,6 +102,12 @@ def g4():
 @app.route('/g5',methods=['GET'])
 def g5():
   return render_template('g5.html' )  
+
+@app.route('/EpsToPdf',methods=['POST'])
+def EpsToPdf():
+   a=request.form.get('filePath')
+   test.EpsToPdf(a)
+   return send_file('static/files/'+a.replace('.eps','.pdf'))
 # the page to wait in during the creation of the grid
 @app.route('/wait', methods=['GET', 'POST'])
 def wait():   
@@ -216,7 +226,11 @@ def generate():
    #return render_template('home.html', x =request.form.get('width'),y = request.form.get('height') )
 @app.route('/download')
 def download():
-   return send_file(request.args.get('name'))
+   filename = request.args.get('name')
+   if filename.__contains__('[Kuffee')== True:
+      return send_file(request.args.get('name'))
+   else:
+      return error('Download request was incomplete')
 
 @app.route('/ads.txt')
 def serve_ads():

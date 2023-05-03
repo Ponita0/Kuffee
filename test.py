@@ -1,8 +1,9 @@
 import multiprocessing
+import os
 import time
 import turtle
 
-def circWithLines(widd, heii, name):
+def circWithLines(widd, heii, name,fileType = 'eps'):
 
     def draw_turtle():
         t = turtle.Turtle(visible=False)
@@ -38,7 +39,7 @@ def circWithLines(widd, heii, name):
                 t.right(angle)
             ts = t.getscreen()
 
-            ts.getcanvas().postscript(file="static/files/[Kuffee]%s.eps" % name)
+            ts.getcanvas().postscript(file="static/files/[Kuffee]%s.eps")
         except turtle.Terminator:
             pass
     
@@ -53,7 +54,7 @@ def circWithLines(widd, heii, name):
     return "Generated turtle image"
 
 f=0
-def circularGrid(number,ratioA,ratioB,name,n):
+def circularGrid(number,ratioA,ratioB,name,n,fileType = 'eps'):
     f=n 
     number=number+1
     def DrawCirccc():
@@ -178,7 +179,7 @@ def circularGrid(number,ratioA,ratioB,name,n):
     p.join()
     return "Generated turtle image"
 z=0
-def circWithRect(nCircles,nRects,rectWidth,name):
+def circWithRect(nCircles,nRects,rectWidth,name,fileType = 'eps'):
     z=nRects
     def mainF():      
         nRects=z
@@ -321,7 +322,7 @@ def circWithRect(nCircles,nRects,rectWidth,name):
     
     return "Generated turtle image"
 
-def regularGrid(ratioA,ratioB,Nwidth,Nheight,name):
+def regularGrid(ratioA,ratioB,Nwidth,Nheight,name,fileType = 'eps'):
     if Nheight>Nwidth:
         temp = Nheight
         Nheight= Nwidth
@@ -389,7 +390,7 @@ def regularGrid(ratioA,ratioB,Nwidth,Nheight,name):
     p.join()
     return "Generated turtle image"
 
-def irregularGrid(ratioA,ratioB,name,n):
+def irregularGrid(ratioA,ratioB,name,n,fileType = 'eps'):
     f=n 
     def DrawCirccc():
         n=f
@@ -478,4 +479,8 @@ def irregularGrid(ratioA,ratioB,name,n):
     p.start()
     p.join()
     return "Generated turtle image"
+
+
+def EpsToPdf(name):
+    os.system(f'epstopdf static/files/{name} static/files/{name.replace(".eps",".pdf")}')
 
