@@ -39,7 +39,7 @@ def circWithLines(widd, heii, name,fileType = 'eps'):
                 t.right(angle)
             ts = t.getscreen()
 
-            ts.getcanvas().postscript(file="static/files/[Kuffee]%s.eps")
+            ts.getcanvas().postscript(file="static/files/[Kuffee]%s.eps"%name)
         except turtle.Terminator:
             pass
     
@@ -482,5 +482,5 @@ def irregularGrid(ratioA,ratioB,name,n,fileType = 'eps'):
 
 
 def EpsToPdf(name):
-    os.system(f'epstopdf static/files/{name} static/files/{name.replace(".eps",".pdf")}')
+    os.system(f'epstopdf "static/files/{name}" "static/files/{name.replace(".eps",".pdf")}"')
 

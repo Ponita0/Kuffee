@@ -106,7 +106,7 @@ def g5():
 @app.route('/EpsToPdf',methods=['POST'])
 def EpsToPdf():
    a=request.form.get('filePath')
-   test.EpsToPdf(a)
+   test.EpsToPdf(a)   
    return send_file('static/files/'+a.replace('.eps','.pdf'))
 # the page to wait in during the creation of the grid
 @app.route('/wait', methods=['GET', 'POST'])
