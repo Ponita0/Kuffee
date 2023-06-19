@@ -1,0 +1,32 @@
+/* Add a media query to target screens smaller than 768px */
+@media (max-width: 768px) {
+
+    /* Make the title font size smaller */
+    .title {
+      font-size: 36px;
+    }
+  
+    /* Center the wrapper div */
+    #wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    /* Set the width of the boxes to 100% */
+    .box {
+      width: 100%;
+    }
+  
+    /* Add some margin to the buttons */
+    .btn {
+      margin-top: 10px;
+    }
+  
+    /* Set the font size of the footer text to 14px */
+    footer {
+      font-size: 14px;
+    }
+  }
+  

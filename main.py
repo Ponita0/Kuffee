@@ -3,7 +3,6 @@ from flask import*
 import test
 import string
 import random
-import turtle
 import logging
 import requests
 import datetime
@@ -59,23 +58,22 @@ def home():
            "icon_url": "https://illustoon.com/photo/7652.png"
        }
    }
-
-# Construct the webhook POST request JSON data with the embed data
    data = {
        "username": "Visits Bot",
     "avatar_url": "https://cdn.britannica.com/58/129958-050-C3FE2DD2/Adolf-Hitler-1933.jpg",    
     "embeds": [embed]
    }     
-# Send the webhook request
-#   response = requests.post(webhook_url, json=payload)
-   response = requests.post(webhook_url, data=json.dumps(data), headers={'Content-Type': 'application/json'})
 
 
-# Check if the request was successful
-   if response.status_code == 204:
-      print("Webhook sent successfully!")
-   else:
-    print(f"Failed to send webhook. Error: {response.text}")
+
+#    response = requests.post(webhook_url, data=json.dumps(data), headers={'Content-Type': 'application/json'})
+
+
+# # Check if the request was successful
+#    if response.status_code == 204:
+#       print("Webhook sent successfully!")
+#    else:
+#     print(f"Failed to send webhook. Error: { response.text }")
    return render_template('home.html')
 
 
@@ -235,6 +233,15 @@ def download():
 @app.route('/ads.txt')
 def serve_ads():
     return send_from_directory(app.static_folder, 'ads.txt')
+
+@app.route('/about')
+def about():
+   return render_template('about.html' )  
+
+@app.route('/grids')
+def grids():
+   return render_template('grids.html' )  
+
 
 
 if __name__ == '__main__':

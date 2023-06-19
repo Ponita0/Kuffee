@@ -16,10 +16,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;700&family=Shadows+Into+Light&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="mainpage.css">    
+    <link rel="stylesheet" href="mainpage.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/mainpage.css') }}">
-    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gridspage.css') }}">
+
     <title>
         Kuffee - calligraphy grid generator
     </title>
@@ -53,58 +53,48 @@
         </div>
     </header>
     <main>
+        <div class="ads-div">
+            Hi there im here for the ads
+        </div>
         <div class="main-container">
-
             <div class="card-container">
                 <div class="card">
-                    <a href="#">
-
-                        <img src="{{ url_for('static', filename='imgs/g1.png') }}">
-                        <h1>
-                            شعاعية 1
-                        </h1>
-                        
-                    </a>
+                    <div class="card-title" id="id1">
+                        شعاعية 1
+                    </div>
+                    <form>
+                        <div class="card-row">
+                            <div class="row-col">                                
+                                <P>
+                                    الطول
+                                </P>
+                                <input type="text" name="height" id="x" class="main-input" style="width: 50px;">
+                            </div>
+                            <div class="row-col">
+                                <p>العرض</p>                                
+                                <input type="text" name="width" id="x" class="main-input" style="width: 50px;">
+                            </div>                           
+                        </div>
+                        <div class="card-row">
+                            <div class="row-col">
+                                <img src="{{ url_for('static', filename='imgs/g5.png') }}">
+                            </div>
+                            <div class="row-col">
+                                <img src="{{ url_for('static', filename='imgs/g5.png') }}">
+                            </div>
+                        </div>
+                        <div class="card-row">
+                            <input type="submit" class="main-btn" value="Generate">
+                        </div>
+                    </form>
                 </div>
-                <div class="card">
-                    <a href="#">
 
-                        <img src="{{ url_for('static', filename='imgs/g2.png') }}">
-                        <h1>
-                            شعاعية 2
-                        </h1>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="#">
-
-                        <img src="{{ url_for('static', filename='imgs/g3.png') }}">
-                        <h1>
-                            دائرية
-                        </h1>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="#">
-
-                        <img src="{{ url_for('static', filename='imgs/g4.png') }}">
-                        <h1>
-                            تربيعية منتظمة
-                        </h1>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="#">
-
-                        <img src="{{ url_for('static', filename='imgs/g5.png') }}">
-                        <h1>
-                            تربيعية غير منتظمة
-                        </h1>
-                    </a>
-                </div>
-           
 
             </div>
+
+        </div>
+        <div class="ads-div">
+            Hi there im here for the ads
         </div>
     </main>
     <footer class="footer">
@@ -162,16 +152,16 @@
     </footer>
 </body>
 <script>
-   const toggleBtn = document.querySelector('.toggle_btn')
-const toggleBtnIcon = document.querySelector('.toggle_btn i')
-const dropdownMenu = document.querySelector('.dropdown_menu')
+    const toggleBtn = document.querySelector('.toggle_btn')
+    const toggleBtnIcon = document.querySelector('.toggle_btn i')
+    const dropdownMenu = document.querySelector('.dropdown_menu')
 
-toggleBtn.onclick = function () {
-    dropdownMenu.classList.toggle('open')
-    const isOpen = dropdownMenu.classList.contains('open')
+    toggleBtn.onclick = function () {
+        dropdownMenu.classList.toggle('open')
+        const isOpen = dropdownMenu.classList.contains('open')
 
-    toggleBtnIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'
-}
+        toggleBtnIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'
+    }
 </script>
 
 </html>
